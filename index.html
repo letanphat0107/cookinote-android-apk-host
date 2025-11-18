@@ -1,99 +1,425 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download CookiNote APK</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f7fb;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CookiNote - Ứng dụng nấu ăn thông minh</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    .container {
-      max-width: 420px;
-      background: white;
-      margin-top: 40px;
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ffa952 0%, #ff8c42 100%);
+        color: #333;
+      }
 
-    img.logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
+      /* Navigation */
+      nav {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
+      nav .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    p.desc {
-      color: #555;
-      margin-bottom: 25px;
-    }
+      nav .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffa952;
+      }
 
-    a.button {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #0070f3;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: bold;
-      box-shadow: 0 3px 10px rgba(0,112,243,0.3);
-      transition: 0.2s;
-    }
+      nav .logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+      }
 
-    a.button:hover {
-      background: #005ad1;
-      scale: 1.03;
-    }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
 
-    .guide {
-      margin-top: 30px;
-      text-align: left;
-    }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
 
-    .guide h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+      nav ul li a:hover {
+        color: #ffa952;
+      }
 
-    .guide li {
-      margin-bottom: 8px;
-      color: #444;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <img src="https://i.imgur.com/AF5Rr14.png" class="logo" alt="Logo">
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 80px 20px;
+        color: white;
+      }
 
-    <h1>Tải xuống CookiNote</h1>
-    <p class="desc">Phiên bản Android (.APK) – cài đặt nhanh, không cần Google Play.</p>
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
 
-    <!-- 👉 đổi link này thành file APK của bạn trên Vercel -->
-    <a class="button" href="/cookinote.apk" download>📥 Download APK</a>
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 40px;
+        opacity: 0.95;
+      }
 
-    <div class="guide">
-      <h2>📌 Hướng dẫn cài đặt</h2>
-      <ul>
-        <li>Tải file APK bằng nút phía trên.</li>
-        <li>Mở file → chọn <b>Cài đặt</b>.</li>
-        <li>Cho phép “Cài ứng dụng không rõ nguồn gốc”.</li>
-        <li>Cài đặt hoàn tất → mở ứng dụng.</li>
-      </ul>
-    </div>
-  </div>
-</body>
+      .hero img.logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Download Buttons */
+      .download-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 30px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-android {
+        background: #3ddc84;
+        color: white;
+      }
+
+      .btn-android:hover {
+        background: #2fc470;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(61, 220, 132, 0.4);
+      }
+
+      .btn-ios {
+        background: #000;
+        color: white;
+      }
+
+      .btn-ios:hover {
+        background: #333;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Features Section */
+      .features {
+        background: white;
+        padding: 80px 20px;
+      }
+
+      .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .features h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: #ffa952;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background: #fff8f0;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s;
+        border: 2px solid #ffe4cc;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 169, 82, 0.2);
+        border-color: #ffa952;
+      }
+
+      .feature-card .icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      .feature-card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #ff8c42;
+      }
+
+      .feature-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Guide Section */
+      .guide {
+        background: #fff8f0;
+        padding: 80px 20px;
+      }
+
+      .guide-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .guide h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #ffa952;
+      }
+
+      .guide-steps {
+        display: grid;
+        gap: 20px;
+      }
+
+      .step {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        align-items: start;
+        gap: 15px;
+        border: 2px solid #ffe4cc;
+      }
+
+      .step-number {
+        background: #ffa952;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .step-content h3 {
+        margin-bottom: 8px;
+        color: #ff8c42;
+      }
+
+      .step-content p {
+        color: #666;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        nav ul {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        .download-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="/logo.png" alt="CookiNote Logo" />
+          <span>CookiNote</span>
+        </div>
+        <ul>
+          <li><a href="#features">Tính năng</a></li>
+          <li><a href="#download">Tải xuống</a></li>
+          <li><a href="#guide">Hướng dẫn</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="download">
+      <img
+        src="/logo.png"
+        class="logo"
+        alt="CookiNote Logo"
+      />
+      <h1>CookiNote</h1>
+      <p>Ứng dụng nấu ăn thông minh với AI - Trợ lý bếp của bạn</p>
+
+      <div class="download-buttons">
+        <a href="/cookinote.apk" download class="btn btn-android">
+          <span>📥</span>
+          <div>
+            <div style="font-size: 12px; opacity: 0.9">Tải cho</div>
+            <div>Android</div>
+          </div>
+        </a>
+        <a href="/cookinote.tar.gz" class="btn btn-ios">
+          <span>🍎</span>
+          <div>
+            <div style="font-size: 12px; opacity: 0.9">Tải cho</div>
+            <div>iOS</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="features-container">
+        <h2>✨ Tính năng nổi bật</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">🔍</div>
+            <h3>Tìm công thức nấu ăn</h3>
+            <p>
+              Hàng nghìn công thức đa dạng từ món Á đến món Âu, dễ dàng tìm kiếm
+              và lưu trữ
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🤖</div>
+            <h3>AI gợi ý thông minh</h3>
+            <p>
+              Nhập nguyên liệu có sẵn, AI sẽ gợi ý món ăn phù hợp ngay lập tức
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">💬</div>
+            <h3>Trò chuyện với AI</h3>
+            <p>Hỏi đáp về nấu ăn, mẹo vặt bếp núc với trợ lý AI 24/7</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📅</div>
+            <h3>Thực đơn hàng ngày</h3>
+            <p>Lên kế hoạch bữa ăn cho cả tuần, quản lý dinh dưỡng khoa học</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👤</div>
+            <h3>Cá nhân hóa</h3>
+            <p>Gợi ý món ăn theo sở thích, khẩu vị và chế độ ăn của bạn</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👨‍🍳</div>
+            <h3>Hỗ trợ nấu xuyên suốt</h3>
+            <p>
+              Hướng dẫn từng bước chi tiết, timer thông minh, không bỏ lỡ bước
+              nào
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide" id="guide">
+      <div class="guide-container">
+        <h2>📱 Hướng dẫn cài đặt</h2>
+        <div class="guide-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Tải file APK</h3>
+              <p>
+                Nhấn vào nút "Tải cho Android" phía trên để tải file APK về máy
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Cho phép cài đặt</h3>
+              <p>
+                Vào Cài đặt → Bảo mật → Bật "Cho phép cài ứng dụng không rõ
+                nguồn gốc"
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Mở file và cài đặt</h3>
+              <p>
+                Tìm file APK đã tải trong thư mục Download, nhấn vào và chọn
+                "Cài đặt"
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Bắt đầu sử dụng</h3>
+              <p>
+                Sau khi cài đặt hoàn tất, mở ứng dụng và bắt đầu trải nghiệm nấu
+                ăn thông minh!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
